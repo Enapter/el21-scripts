@@ -2,8 +2,10 @@
 
 This repository contains example scripts that allow to control <a href="https://www.enapter.com/electrolyser">Electrolyser.</a>
 
-<a href="https://handbook.enapter.com/electrolyser/el21/el21.html">Enapter Handbook</a>.
-=====
+More technical details on the EL 2.1 electrolyser including network requirements, firmware and how to set up your electrolyser in the <a href="https://handbook.enapter.com/electrolyser/el21/el21.html">Enapter Handbook</a>.
+
+---
+
 Example scripts need pymodbus package to be installed. You can install it running:<br>
 <code>#pip3 install pymodbus</code> 
 
