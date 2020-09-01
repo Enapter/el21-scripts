@@ -1,6 +1,6 @@
-<h3>Electrolyser (EL 2.1) example control scripts</h3>
+<h3>Electrolyser (EL 2.1) control scripts examples</h3>
 
-This repository contains example scripts that allow to control <a href="https://www.enapter.com/electrolyser">Electrolyser.</a>
+This repository contains example scripts that allow to control <a href="https://www.enapter.com/electrolyser">Electrolyser (EL 2.1).</a>
 
 More technical details on the EL 2.1 electrolyser including network requirements, firmware and how to set up your electrolyser in the <a href="https://handbook.enapter.com/electrolyser/el21/el21.html">Enapter Handbook</a>.
 
