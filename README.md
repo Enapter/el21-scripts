@@ -25,3 +25,7 @@ EL2.1 IP address and register number (you can use 1006 for testing purposes) are
 <b>el21reboot.py</b> - this script writes a value ‘1’ to register 4 (Reboot). You can find more info about holding registers <a href="https://handbook.enapter.com/electrolyser/el21/el21_firmware/1.2.0/modbus_tcp_communication_interface.html#holding-registers-read-write">here</a>.<br>
 EL2.1 IP address is needed to be passed as an arguments to this script when you run it. E.g.:<br>
 <code>#python3 el21reboot.py 192.168.1.2</code>
+
+<b>el21heartbeat.py</b> - this script sets HeartBeat ModBus Timeout. You can find more info about input registers <a href="https://handbook.enapter.com/electrolyser/el21/el21_firmware/1.2.0/modbus_tcp_communication_interface.html#input-registers-read-only">here</a>.<br>
+EL2.1 IP address and timeout (in seconds, 0 - turn HeartBeat ModBus off) are needed to be passed as an arguments to this script when you run it. E.g.:<br> 
+<code>#python3 el21heartbeat.py 192.168.1.2 30</code>
