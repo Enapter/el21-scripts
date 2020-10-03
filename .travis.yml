@@ -1,0 +1,10 @@
+language: python
+dist: focal
+
+install:
+    - pip3 install flakehell
+    - sudo apt-get install npm && npm install -g markdownlint-cli
+
+script:
+    - flakehell lint
+    - bash -c "markdownlint --config markdownlint.json **/*.md"
