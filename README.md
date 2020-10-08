@@ -13,7 +13,8 @@ Example scripts need pymodbus package to be installed. You can install it runnin
 EL2.1 IP address is needed to be passed as an argument to this script when you run it. E.g.:  
 `#python3 el21checkmodbus.py 192.168.1.2`
 
-**el21maintenance.py** - this script guides user through EL 2.1 maintenance process when electrolyte refilling is performed.  
+**el21maintenance.py** - this script guides user through EL 2.1 maintenance process using Modbus TCP.  
+The maintenance process is used for first electrolyte fill or periodical change of it.  
 EL2.1 IP address is needed to be passed as an argument to this script when you run it. E.g.:  
 `#python3 el21maintenance.py 192.168.1.2`
 
