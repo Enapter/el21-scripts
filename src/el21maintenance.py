@@ -103,7 +103,7 @@ if maintenance == True:
 			if LSH102B_in == False:
 				if dmf == 0:
 					t = datetime.datetime.now()
-					print('[' + str(t) + '] Meduim Electrolyte Level - drain more electrolyte')
+					print('[' + str(t) + '] Medium Electrolyte Level - drain more electrolyte')
 					dmf = 1
 			if LSM102C_in == False:
 				if dlf == 0:
