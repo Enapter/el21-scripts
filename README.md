@@ -1,4 +1,4 @@
-<h3>Electrolyser (EL 2.1) control scripts examples</h3>
+## Electrolyser (EL 2.1) control scripts examples
 
 This repository contains example scripts that allow to control <a href="https://www.enapter.com/electrolyser">Electrolyser (EL 2.1).</a>
 
@@ -18,7 +18,7 @@ EL2.1 IP address is needed to be passed as an argument to this script when you r
 <code>#python3 el21maintenance.py 192.168.1.2</code>
 
 **el21errors.py** - this script shows current EL2.1 errors (if any). 
-You can find a list of errors codes <a href="https://handbook.enapter.com/electrolyser/el21/el21_firmware/1.2.0/modbus_tcp_communication_interface.html#error-codes">here</a>.  
+You can find a list of errors codes [here]((https://handbook.enapter.com/electrolyser/el21/el21_firmware/1.2.0/modbus_tcp_communication_interface.html#error-codes)).  
 EL2.1 IP address is needed to be passed as an argument to this script when you run it. E.g.:  
 <code>#python3 el21errors.py 192.168.1.2</code>
 
