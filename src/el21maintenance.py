@@ -103,12 +103,12 @@ if maintenance == True:
 			if LSH102B_in == False:
 				if dmf == 0:
 					t = datetime.datetime.now()
-					print('[' + str(t) + '] Meduim Electrolyte Level - drain mode electrolyte')
+					print('[' + str(t) + '] Meduim Electrolyte Level - drain more electrolyte')
 					dmf = 1
 			if LSM102C_in == False:
 				if dlf == 0:
 					t = datetime.datetime.now()
-					print('[' + str(t) + '] Low Electrolyte Level - drain mode electrolyte')
+					print('[' + str(t) + '] Low Electrolyte Level - drain more electrolyte')
 					dlf = 1
 	while True:
 		flag = electrolyte_level(mlf, llf, zlf)
