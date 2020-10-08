@@ -77,7 +77,7 @@ def electrolyte_level(mlf, llf, zlf):
 	return [mlf, llf, zlf]
 
 if maintenance == False:
-	input(f'{bcolors.FAIL}Maintenance mode will be turned on for refilling process.{bcolors.ENDC}\nPress Ctrl+Z to stop this script or Enter to proceed.')	
+	input(f'{bcolors.FAIL}Maintenance mode will be turned on for refilling process.{bcolors.ENDC}\nPress Ctrl+C to stop this script or Enter to proceed.')	
 	res = device.write_register(register, 1, unit=1)
 	if 'Exception' in str(res):
 		print('Maintenance mode can\'t be turned on. Please contact Enapter Support')
