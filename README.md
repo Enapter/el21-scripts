@@ -7,11 +7,11 @@ More technical details on the EL 2.1 electrolyser including network requirements
 ---
 
 Example scripts need pymodbus package to be installed. You can install it running:  
-<code>#pip3 install pymodbus</code> 
+  #pip3 install pymodbus
 
 **el21checkmodbus.py** - this script simply checks if Modbus connection is available with connected device.  
 EL2.1 IP address is needed to be passed as an argument to this script when you run it. E.g.:  
-<code>#python3 el21checkmodbus.py 192.168.1.2</code>
+  #python3 el21checkmodbus.py 192.168.1.2
 
 **el21maintenance.py** - this script guides user through EL 2.1 maintenance process when electrolyte refilling is performed.  
 EL2.1 IP address is needed to be passed as an argument to this script when you run it. E.g.:  
