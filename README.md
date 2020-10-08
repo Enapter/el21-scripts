@@ -13,6 +13,10 @@ Example scripts need pymodbus package to be installed. You can install it runnin
 EL2.1 IP address is needed to be passed as an argument to this script when you run it. E.g.:<br> 
 <code>#python3 el21checkmodbus.py 192.168.1.2</code>
 
+<b>el21maintenance.py</b> - this script guides user through EL 2.1 maintenance process when electrolyte refilling is performed.<br> 
+EL2.1 IP address is needed to be passed as an argument to this script when you run it. E.g.:<br> 
+<code>#python3 el21maintenance.py 192.168.1.2</code>
+
 <b>el21errors.py</b> - this script shows current EL2.1 errors (if any). 
 You can find a list of errors codes <a href="https://handbook.enapter.com/electrolyser/el21/el21_firmware/1.2.0/modbus_tcp_communication_interface.html#error-codes">here</a>.<br>
 EL2.1 IP address is needed to be passed as an argument to this script when you run it. E.g.:<br>
