@@ -17,7 +17,7 @@ EL2.1 IP address is needed to be passed as an argument to this script when you r
 EL2.1 IP address is needed to be passed as an argument to this script when you run it. E.g.:  
 `#python3 el21maintenance.py 192.168.1.2`
 
-![alt text](https://github.com/alexandershalin/el21-scripts/gif.gif "el21maintenance.py")
+![alt text](https://github.com/alexandershalin/el21-scripts/raw/master/el21maintenance.gif "el21maintenance.py")
 
 **el21errors.py** - this script shows current EL2.1 errors (if any). 
 You can find a list of errors codes [here](https://handbook.enapter.com/electrolyser/el21/el21_firmware/1.2.0/modbus_tcp_communication_interface.html#error-codes). 
