@@ -4,4 +4,4 @@ max_line_length = 90
 show_source = true
 
 [tool.flakehell.plugins]
-"*" = ["+*", "-C0114", "-C0301"]
+"*" = ["+*", "-C0114", "-C0301", "-E501"]

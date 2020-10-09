@@ -23,7 +23,7 @@ firmware = device.read_input_registers(REGISTER, 1, unit=1)
 
 wps104_in = int(firmware.registers[0])
 
-print('Register', register, ':', wps104_in)
+print('Register', REGISTER, ':', wps104_in)
 
 if wps104_in == 1:
     print('Water is present')

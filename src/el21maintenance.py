@@ -29,10 +29,10 @@ class BColors:
 
 ip = sys.argv[1]
 PORT = 502
-register = 6  # Maintenance Mode. 1 = Enable.
+REGISTER = 6  # Maintenance Mode. 1 = Enable.
 
 device = ModbusTcpClient(ip, PORT)
-response = device.read_holding_registers(register, 1, unit=1)
+response = device.read_holding_registers(REGISTER, 1, unit=1)
 
 maintenance = bool(response.registers[0])
 
