@@ -17,7 +17,6 @@ from pymodbus.client.sync import ModbusTcpClient
 ip = sys.argv[1]
 PORT = 502      # Default Modbus port
 REGISTER = 832  # Error Events Array represented by Error Codes
-                # First Uint16 contains total quantity of Error Events
 
 device = ModbusTcpClient(ip, PORT)
 firmware = device.read_input_registers(REGISTER, 32, unit=1)

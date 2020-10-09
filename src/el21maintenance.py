@@ -59,7 +59,7 @@ def electrolyte_level(mlf, llf, zlf):
     if LSH102B_in:
         t = datetime.datetime.now()
         input('[' + str(t) + '] High Electrolyte Level\nPress Enter to finish')
-        res = device.write_register(register, 0, unit=1)
+        res = device.write_register(REGISTER, 0, unit=1)
         if 'Exception' in str(res):
             print('Maintenance mode can\'t be turned off. Please contact Enapter Support')
         else:
@@ -84,7 +84,7 @@ def electrolyte_level(mlf, llf, zlf):
 
 if maintenance is False:
     input(f'{BColors.FAIL}Maintenance mode will be turned on for refilling process.{BColors.ENDC}\nPress Ctrl+C to stop this script or Enter to proceed.')
-    res = device.write_register(register, 1, unit=1)
+    res = device.write_register(REGISTER, 1, unit=1)
     if 'Exception' in str(res):
         print('Maintenance mode can\'t be turned on. Please contact Enapter Support')
         electrolyte_level()
