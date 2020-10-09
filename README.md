@@ -20,7 +20,7 @@ The maintenance process is used for first electrolyte fill or periodical change 
 EL2.1 IP address is needed to be passed as an argument to this script when you run it. E.g.:  
 `#python3 el21maintenance.py 192.168.1.2`
 
-![alt text](https://github.com/alexandershalin/el21-scripts/raw/master/el21maintenance.py.gif "el21maintenance.py")
+![alt text](https://raw.githubusercontent.com/Enapter/el21-scripts/master/el21maintenance.py.gif "el21maintenance.py")
 
 ## el21errors.py
 This script shows current EL2.1 errors (if any). 
