@@ -13,11 +13,10 @@
 
 import sys
 import datetime
-import struct
 from pymodbus.client.sync import ModbusTcpClient
 
 
-class bcolors:
+class BColors:
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
     OKGREEN = '\033[92m'
@@ -26,6 +25,7 @@ class bcolors:
     ENDC = '\033[0m'
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
+
 
 ip = sys.argv[1]
 PORT = 502
@@ -63,7 +63,7 @@ def electrolyte_level(mlf, llf, zlf):
         if 'Exception' in str(res):
             print('Maintenance mode can\'t be turned off. Please contact Enapter Support')
         else:
-            print(f'{bcolors.WARNING}Maintenance mode turned off{bcolors.ENDC}\n{bcolors.OKGREEN}Refilling process completed{bcolors.ENDC}')
+            print(f'{BColors.WARNING}Maintenance mode turned off{BColors.ENDC}\n{BColors.OKGREEN}Refilling process completed{BColors.ENDC}')
         sys.exit()
     elif LSM102C_in:
         if mlf == 0:
@@ -77,12 +77,13 @@ def electrolyte_level(mlf, llf, zlf):
             llf = 1
     else:
         if zlf == 0:
-            print(f'{bcolors.OKBLUE}Start filling electrolyte{bcolors.ENDC}')
+            print(f'{BColors.OKBLUE}Start filling electrolyte{BColors.ENDC}')
             zlf = 1
     return [mlf, llf, zlf]
 
+
 if maintenance is False:
-    input(f'{bcolors.FAIL}Maintenance mode will be turned on for refilling process.{bcolors.ENDC}\nPress Ctrl+C to stop this script or Enter to proceed.')
+    input(f'{BColors.FAIL}Maintenance mode will be turned on for refilling process.{BColors.ENDC}\nPress Ctrl+C to stop this script or Enter to proceed.')
     res = device.write_register(register, 1, unit=1)
     if 'Exception' in str(res):
         print('Maintenance mode can\'t be turned on. Please contact Enapter Support')
@@ -91,7 +92,7 @@ if maintenance is False:
         maintenance = True
 
 if maintenance is True:
-    print(f'{bcolors.WARNING}Maintenance mode turned on{bcolors.ENDC}\n{bcolors.OKBLUE}Start draining electrolyte{bcolors.ENDC}')
+    print(f'{BColors.WARNING}Maintenance mode turned on{BColors.ENDC}\n{BColors.OKBLUE}Start draining electrolyte{BColors.ENDC}')
     LSH102B_in = bool(level.registers[0])
     LSL102D_in = bool(level.registers[2])
     LSM102C_in = bool(level.registers[3])

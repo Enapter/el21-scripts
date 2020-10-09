@@ -15,11 +15,11 @@ import sys
 from pymodbus.client.sync import ModbusTcpClient
 
 ip = sys.argv[1]
-port = 502
-register = 7003  # 1 = Water is present on input; 0 = No water input.
+PORT = 502
+REGISTER = 7003  # 1 = Water is present
 
-device = ModbusTcpClient(ip, port)
-firmware = device.read_input_registers(register, 1, unit=1)
+device = ModbusTcpClient(ip, PORT)
+firmware = device.read_input_registers(REGISTER, 1, unit=1)
 
 wps104_in = int(firmware.registers[0])
 
