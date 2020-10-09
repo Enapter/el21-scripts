@@ -4,9 +4,9 @@
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #     http://www.apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software distribut$
-# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express o$
-# See the License for the specific language governing permissions and limitatio$
+# Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and limitations under the License.
 
 import sys
 import datetime
@@ -52,7 +52,7 @@ def electrolyte_level(mlf, llf, zlf):
 		print('Very High Electrolyte Level\nMaintenance mode can\'t be turned on. Drain electrolyte, reset your EL 2.1 and run this script again.')
 		sys.exit()
 	if LSH102B_in:
-		t = datetime.datetime.now()		
+		t = datetime.datetime.now()
 		input('[' + str(t) + '] High Electrolyte Level\nPress Enter to finish')
 		res = device.write_register(register, 0, unit=1)
 		if 'Exception' in str(res) :
@@ -77,7 +77,7 @@ def electrolyte_level(mlf, llf, zlf):
 	return [mlf, llf, zlf]
 
 if maintenance == False:
-	input(f'{bcolors.FAIL}Maintenance mode will be turned on for refilling process.{bcolors.ENDC}\nPress Ctrl+C to stop this script or Enter to proceed.')	
+	input(f'{bcolors.FAIL}Maintenance mode will be turned on for refilling process.{bcolors.ENDC}\nPress Ctrl+C to stop this script or Enter to proceed.')
 	res = device.write_register(register, 1, unit=1)
 	if 'Exception' in str(res):
 		print('Maintenance mode can\'t be turned on. Please contact Enapter Support')
@@ -98,7 +98,7 @@ if maintenance == True:
 		LSL102D_in = bool(level.registers[2])
 		LSM102C_in = bool(level.registers[3])
 		if LSL102D_in == False:
-			break		
+			break
 		else:
 			if LSH102B_in == False:
 				if dmf == 0:
