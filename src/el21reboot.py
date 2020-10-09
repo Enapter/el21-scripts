@@ -9,13 +9,12 @@
 # See the License for the specific language governing permissions and limitatio$
 
 import sys
-import struct
 from pymodbus.client.sync import ModbusTcpClient
 
 ip = sys.argv[1]
-port = 502
-register = 4 # Reboot. 1 = Reboot.
-value = 1
+PORT = 502
+REGISTER = 4  # Reboot. 1 = Reboot.
+VALUE = 1
 
-device = ModbusTcpClient(ip, port)
-print(device.write_register(register, value, unit=1))
+device = ModbusTcpClient(ip, PORT)
+print(device.write_register(REGISTER, VALUE, unit=1))

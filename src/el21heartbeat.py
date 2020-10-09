@@ -9,19 +9,17 @@
 # See the License for the specific language governing permissions and limitatio$
 
 import sys
-import time
-import struct
 from pymodbus.client.sync import ModbusTcpClient
 
 ip = sys.argv[1]
-port = 502
+PORT = 502
 timeout = sys.argv[2]
 
-device = ModbusTcpClient(ip, port)
+device = ModbusTcpClient(ip, PORT)
 
 h = device.read_holding_registers(4600, 1, unit=1)
 print('Current Heartbeat Timeout value:', h.registers[0])
-configuration_begin = device.write_register(4000, 1, unit=1) # Begin writing configuration
-heartbeat_timeout = device.write_register(4600, int(timeout), unit=1) # Write HeartBeat ModBus Timeout. 0 - turned off
-configuration_commit = device.write_register(4001, 1, unit=1) # Commit changes
+configuration_begin = device.write_register(4000, 1, unit=1)  # Begin writing configuration
+heartbeat_timeout = device.write_register(4600, int(timeout), unit=1)  # Write HeartBeat ModBus Timeout. 0 - turned off
+configuration_commit = device.write_register(4001, 1, unit=1)  # Commit changes
 print('Heartbeat Timeout set to', str(timeout))

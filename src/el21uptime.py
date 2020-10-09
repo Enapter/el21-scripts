@@ -9,15 +9,14 @@
 # See the License for the specific language governing permissions and limitatio$
 
 import sys
-import struct
 from pymodbus.client.sync import ModbusTcpClient
 
 ip = sys.argv[1]
-port = 502
-register = 22 # How long the system has been running (seconds)
+PORT = 502
+REGISTER = 22  # How long the system has been running (seconds)
 
-device = ModbusTcpClient(ip, port)
-firmware = device.read_input_registers(register, 2, unit=1) # unit here is an address of the slave device
+device = ModbusTcpClient(ip, PORT)
+firmware = device.read_input_registers(REGISTER, 2, unit=1)  # unit here is an address of the slave device
 
 uptime = firmware.registers[1] | (firmware.registers[0] << 16)
 

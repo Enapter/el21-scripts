@@ -9,23 +9,22 @@
 # See the License for the specific language governing permissions and limitatio$
 
 import sys
-import struct
 from pymodbus.client.sync import ModbusTcpClient
 
 ip = sys.argv[1]
 port = 502
-register = 7003 # 1 = Water is present on input; 0 = No water input.
+register = 7003  # 1 = Water is present on input; 0 = No water input.
 
 device = ModbusTcpClient(ip, port)
-firmware = device.read_input_registers(register, 1, unit=1) # unit here is an address of the slave devi$
+firmware = device.read_input_registers(register, 1, unit=1)  # unit here is an address of the slave devi$
 
 wps104_in = int(firmware.registers[0])
 
 print('Register', register, ':', wps104_in)
 
-if wps104_in == 1 :
+if wps104_in == 1:
 	print('Water is present')
-elif wps104_in == 0 :
-	print('No water input')
-else :
+elif wps104_in == 0:
+	print('No water')
+else:
 	print('No data')
