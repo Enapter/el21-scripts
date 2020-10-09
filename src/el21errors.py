@@ -12,14 +12,15 @@
 # limitations under the License.
 
 import sys
-from pymodbus.client.sync import *
+from pymodbus.client.sync import ModbusTcpClient
 
 ip = sys.argv[1]
-PORT = 502
-REGISTER = 832  # Error Events Array represented by Error Codes. First Uint16 contains total quantity of Error Events
+PORT = 502      # Default Modbus port
+REGISTER = 832  # Error Events Array represented by Error Codes
+                # First Uint16 contains total quantity of Error Events
 
 device = ModbusTcpClient(ip, PORT)
-firmware = device.read_input_registers(REGISTER, 32, unit=1)  # unit here is an address of the slave device
+firmware = device.read_input_registers(REGISTER, 32, unit=1)
 numberoferrors = firmware.registers[0]
 print('Number of errors:', numberoferrors)
 for e in range(1, numberoferrors + 1):

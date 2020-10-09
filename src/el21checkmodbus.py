@@ -12,19 +12,19 @@
 # limitations under the License.
 
 import sys
-from pymodbus.client.sync import *
+from pymodbus.client.sync import ModbusTcpClient
 
 ip = sys.argv[1]
 PORT = 502
 
 try:
-	el21 = ModbusTcpClient(ip, PORT)
-	firmware = el21.read_input_registers(0, 2, unit=1)
+    el21 = ModbusTcpClient(ip, PORT)
+    firmware = el21.read_input_registers(0, 2, unit=1)
 
-	if firmware.registers[0] == 17740 and firmware.registers[1] == 12849:  # check if device is EL2.1
-		print("Modbus on EL2.1 found")
-	else:
-		print("Not EL2.1 device")
+    if firmware.registers[0] == 17740 and firmware.registers[1] == 12849:  # check if device is EL2.1
+        print("Modbus on EL2.1 found")
+    else:
+        print("Not EL2.1 device")
 
 except:
-	print('Modbus not found')
+    print('Modbus not found')

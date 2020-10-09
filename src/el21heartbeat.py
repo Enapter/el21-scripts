@@ -12,7 +12,7 @@
 # limitations under the License.
 
 import sys
-from pymodbus.client.sync import *
+from pymodbus.client.sync import ModbusTcpClient
 
 ip = sys.argv[1]
 PORT = 502
@@ -22,7 +22,7 @@ device = ModbusTcpClient(ip, PORT)
 
 h = device.read_holding_registers(4600, 1, unit=1)
 print('Current Heartbeat Timeout value:', h.registers[0])
-configuration_begin = device.write_register(4000, 1, unit=1)  # Begin writing configuration
-heartbeat_timeout = device.write_register(4600, int(timeout), unit=1)  # Write HeartBeat ModBus Timeout. 0 - turned off
+configuration_begin = device.write_register(4000, 1, unit=1)  # Start writing configuration
+heartbeat_timeout = device.write_register(4600, int(timeout), unit=1)  # 0 - turned off
 configuration_commit = device.write_register(4001, 1, unit=1)  # Commit changes
 print('Heartbeat Timeout set to', str(timeout))
