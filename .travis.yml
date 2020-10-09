@@ -3,6 +3,7 @@ dist: focal
 
 install:
     - pip3 install flakehell
+    - pip3 install pymodbus
     - sudo apt-get install npm && npm install -g markdownlint-cli
 
 script:
