@@ -29,5 +29,5 @@ try:
 except IndexError:
     print('EL 2.1 IP address needed')
 
-except Exception as e:
-    print(e)
+except Exception as conn_exception:
+    print(conn_exception)

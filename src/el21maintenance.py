@@ -49,28 +49,28 @@ zlf = 0  # Zero Level Flag
 
 def electrolyte_level(mlf, llf, zlf):
     level = device.read_input_registers(7000, 4, unit=1)
-    LSH102B_in = bool(level.registers[0])
-    LSHH102A_in = bool(level.registers[1])
-    LSL102D_in = bool(level.registers[2])
-    LSM102C_in = bool(level.registers[3])
-    if LSHH102A_in:
+    lsh102_b_in = bool(level.registers[0])
+    lshh102_a_in = bool(level.registers[1])
+    lsl102_d_in = bool(level.registers[2])
+    lsm102_c_in = bool(level.registers[3])
+    if lshh102_a_in:
         print('Very High Electrolyte Level\nMaintenance mode can\'t be turned on. Drain electrolyte, reset your EL 2.1 and run this script again.')
         sys.exit()
-    if LSH102B_in:
-        t = datetime.datetime.now()
-        input('[' + str(t) + '] High Electrolyte Level\nPress Enter to finish')
+    if lsh102_b_in:
+        time_now = datetime.datetime.now()
+        input('[' + str(time_now) + '] High Electrolyte Level\nPress Enter to finish')
         res = device.write_register(REGISTER, 0, unit=1)
         if 'Exception' in str(res):
             print('Maintenance mode can\'t be turned off. Please contact Enapter Support')
         else:
             print(f'{BColors.WARNING}Maintenance mode turned off{BColors.ENDC}\n{BColors.OKGREEN}Refilling process completed{BColors.ENDC}')
         sys.exit()
-    elif LSM102C_in:
+    elif lsm102_c_in:
         if mlf == 0:
             t = datetime.datetime.now()
             print('[' + str(t) + '] Medium Electrolyte Level - fill more electrolyte')
             mlf = 1
-    elif LSL102D_in:
+    elif lsl102_d_in:
         if llf == 0:
             t = datetime.datetime.now()
             print('[' + str(t) + '] Low Electrolyte Level - fill more electrolyte')
