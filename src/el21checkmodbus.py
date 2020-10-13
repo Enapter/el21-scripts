@@ -26,5 +26,8 @@ try:
     else:
         print("Not EL2.1 device")
 
-except:
-    print('Modbus not found')
+except IndexError:
+    print('EL 2.1 IP address needed')
+
+except Exception as e:
+    print(e)

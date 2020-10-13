@@ -20,7 +20,7 @@ REGISTER = 832  # Error Events Array represented by Error Codes
 
 device = ModbusTcpClient(ip, PORT)
 firmware = device.read_input_registers(REGISTER, 32, unit=1)
-numberoferrors = firmware.registers[0]
-print('Number of errors:', numberoferrors)
-for e in range(1, numberoferrors + 1):
+number_of_errors = firmware.registers[0]
+print('Number of errors:', number_of_errors)
+for e in range(1, number_of_errors + 1):
     print(hex(firmware.registers[e]))
