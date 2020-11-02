@@ -20,9 +20,11 @@ timeout = sys.argv[2]
 
 device = ModbusTcpClient(ip, PORT)
 
-h = device.read_holding_registers(4600, 1, unit=1)
-print('Current Heartbeat Timeout value:', h.registers[0])
+h = device.read_holding_registers(4600, 2, unit=1)
+current_timeout = h.registers[1] | (h.registers[0] << 16)
+print('Current Heartbeat Timeout value:', current_timeout)
 configuration_begin = device.write_register(4000, 1, unit=1)  # Start writing configuration
-heartbeat_timeout = device.write_register(4600, int(timeout), unit=1)  # 0 - turned off
+# Writing Uint16 to 4601 instead if Uint32 to 4600
+heartbeat_timeout = device.write_register(4601, int(timeout), unit=1)  # 0 - turned off
 configuration_commit = device.write_register(4001, 1, unit=1)  # Commit changes
 print('Heartbeat Timeout set to', str(timeout))
