@@ -35,7 +35,7 @@ EL2.1 IP address is needed to be passed as an argument to this script when you r
 
 This script reads Float32 value from a register. You can find more info about input registers [here](https://handbook.enapter.com/electrolyser/el21/el21_firmware/1.2.1/modbus_tcp_communication_interface.html#input-registers-read-only).  
 EL2.1 IP address and register number (you can use 1006 for testing purposes) are needed to be passed as an arguments to this script when you run it. E.g.:  
-`#python3 el21errors.py 192.168.1.2 1006`
+`#python3 ieee754read.py 192.168.1.2 1006`
 
 ## el21reboot.py
 
