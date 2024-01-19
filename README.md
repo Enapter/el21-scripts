@@ -1,3 +1,8 @@
+# ATTENTION
+
+**This repository is deprecated.**
+Please follow the updated [repository](https://github.com/Enapter/modbus-scripts) with El2.1/4.x compatible scripts.
+
 # Electrolyser (EL 2.1) control scripts examples
 
 This repository contains example scripts that allow to control [Electrolyser (EL 2.1)](https://www.enapter.com/electrolyser).
